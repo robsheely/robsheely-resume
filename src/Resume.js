@@ -56,7 +56,7 @@ const styles = theme => ({
   root: {
     textAlign: "center",
     alignContent: "center",
-    padding: theme.spacing.unit * 4,
+    padding: 32,
     minWidth: 940,
     maxWidth: 1200
   },
@@ -81,62 +81,100 @@ class Resume extends React.Component {
     const { dialogOpen } = this.state;
 
     return (
-      <Query query={GET_RESUME}>
+      <Query query={GET_RESUME} fetchPolicy="network-only">
         {({ loading, errors, data, refetch }) => {
-          if (!loading) {
-            const { resume } = data;
-
-            const positions = resume.positions.sort((a, b) => {
-              if (a.end < b.end) {
-                return 1;
-              }
-              return -1;
-            });
-
-            const closeDialog = () => {
-              this.setState({
-                dialogOpen: false
-              });
-              refetch();
-            };
-
-            return (
-              <div className={classes.root}>
-                <AddPositionDialog open={dialogOpen} closeDialog={closeDialog}/>
-                <div align="center">
-                  <Section>
-                    <Head {...resume} />
-                  </Section>
-                  <Section label="Areas of Expertise">
-                    <Expertise content={resume.expertise}/>
-                  </Section>
-                  <Section label="Technical Proficiency">
-                    <SectionList items={resume.proficiencies}/>
-                  </Section>
-                  <Section label="Professional Experience">
-                    {positions.map(position => (
-                      <PositionCard key={position.id} position={position}/>
-                    ))}
-                    <Button variant="contained" color="primary" className={classes.button} onClick={this.openDialog}>
-                      Add Position
-                    </Button>
-                  </Section>
-                  <Section label="Education & Training">
-                    <SectionList items={resume.education}/>
-                  </Section>
-                  <Section label="Community Involvement">
-                    <SectionList items={resume.community}/>
-                  </Section>
-                </div>
-              </div>
-            );
+          if (loading) {
+            return <span>loading...</span>;
           }
-          return null;
+
+          if (errors) {
+            return <span>Error</span>;
+          }
+
+          const { resume } = data;
+
+          // Order positions by end date
+          const positions = resume.positions.sort((a, b) => {
+            return (a.end < b.end) ? 1 : -1;
+          });
+
+          const closeDialog = () => {
+            this.setState({
+              dialogOpen: false
+            });
+            // Our mutation most likely has been called by the dialog, so resend our query to ensure we have the
+            // newly-added position
+            refetch();
+          };
+
+          return (
+            <div
+              id="resume"
+              data-testid="resume"
+              className={classes.root}
+            >
+              <AddPositionDialog
+                id="resume-dialog"
+                data-testid="resume-dialog"
+                open={dialogOpen} closeDialog={closeDialog} />
+              <div align="center">
+                <Section
+                  id="resume-head"
+                  data-testid="resume-head"
+                >
+                  <Head {...resume} />
+                </Section>
+                <Section
+                  id="resume-expertise"
+                  data-testid="resume-expertise"
+                  label="Areas of Expertise"
+                >
+                  <Expertise content={resume.expertise} />
+                </Section>
+                <Section
+                  id="resume-proficiencies"
+                  data-testid="resume-proficiencies"
+                  label="Technical Proficiency"
+                >
+                  <SectionList name="proficiencies" items={resume.proficiencies} />
+                </Section>
+                <Section
+                  id="resume-experience"
+                  data-testid="resume-experience"
+                  label="Professional Experience">
+                  {positions.map(position => (
+                    <PositionCard key={position.id} position={position} />
+                  ))}
+                  <Button
+                    id="resume-add-button"
+                    data-testid="resume-add-button"
+                    variant="contained"
+                    color="primary"
+                    className={classes.button}
+                    onClick={this.openDialog}
+                  >
+                    Add Position
+                  </Button>
+                </Section>
+                <Section
+                  id="resume-education"
+                  data-testid="resume-education"
+                  label="Education & Training">
+                  <SectionList name="education" items={resume.education} />
+                </Section>
+                <Section
+                  id="resume-community"
+                  data-testid="resume-community"
+                  label="Community Involvement">
+                  <SectionList name="community" items={resume.community} />
+                </Section>
+              </div>
+            </div>
+          );
         }}
       </Query>
     );
   }
-
 }
 
 Resume.propTypes = {

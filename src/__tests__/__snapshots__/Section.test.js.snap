@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Section Passes smoke test 1`] = `
+<div>
+  <div
+    data-testid="section-good-label"
+    id="section-good-label"
+  >
+    <div
+      class="MuiPaper-root-7 MuiPaper-elevation1-10 MuiPaper-rounded-8 MuiCard-root-6 Section-card-1"
+    >
+      <div
+        class="MuiCardContent-root-34 Section-content-2"
+        data-testid="section-good-label-content"
+        id="section-good-label-content"
+      >
+        <h6
+          class="MuiTypography-root-35 Section-label-3 MuiTypography-h6-52 Section-h6-5 MuiTypography-colorInherit-64"
+          data-testid="section-good-label-content-label"
+          id="section-good-label-content-label"
+        >
+          Good Label
+        </h6>
+        <hr
+          class="MuiDivider-root-71 Section-divider-4"
+          data-testid="section-good-label-content-divider"
+          id="section-good-label-content-divider"
+        />
+        <div>
+          Good Content
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

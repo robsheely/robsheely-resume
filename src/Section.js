@@ -16,7 +16,7 @@ const styles = theme => ({
   content: {
     textAlign: "center"
   },
-  grow: {
+  label: {
     color: theme.palette.secondary[ "600" ]
   },
   divider: {
@@ -31,20 +31,37 @@ const styles = theme => ({
 
 const Section = props => {
   const { classes, label, children } = props;
+  // Convert spaces to dashes and all chars to lowercase to work as part of ids
+  const name = (label) ? label.replace(/\s+/g, "-").toLowerCase() : "none";
+
   return (
-    <div>
+    <div id={`section-${name}`} data-testid={`section-${name}`}>
       <Card className={classes.card}>
-        <CardContent classes={{ root: classes.content }}>
-          {label &&
-          <Fragment>
-            <Typography variant="h6" color="inherit" classes={{
-              root: classes.grow,
-              h6: classes.h6
-            }}>
-              {label}
-            </Typography>
-            <Divider classes={{ root: classes.divider }}/>
-          </Fragment>
+        <CardContent
+          id={`section-${name}-content`}
+          data-testid={`section-${name}-content`}
+          classes={{ root: classes.content }}
+        >
+          {
+            label &&
+            <Fragment>
+              <Typography
+                id={`section-${name}-content-label`}
+                data-testid={`section-${name}-content-label`}
+                variant="h6"
+                color="inherit"
+                classes={{
+                  root: classes.label,
+                  h6: classes.h6
+                }}>
+                {label}
+              </Typography>
+              <Divider
+                id={`section-${name}-content-divider`}
+                data-testid={`section-${name}-content-divider`}
+                classes={{ root: classes.divider }}
+              />
+            </Fragment>
           }
           {children}
         </CardContent>

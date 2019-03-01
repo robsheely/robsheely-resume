@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddPositionDialog Passes smoke tests 1`] = `<div />`;
+
+exports[`AddPositionDialog Passes smoke tests 2`] = `
+<div
+  aria-hidden="true"
+/>
+`;

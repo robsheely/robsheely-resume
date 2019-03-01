@@ -1,0 +1,101 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PositionCard Passes smoke test 1`] = `
+<div>
+  <div
+    class="MuiPaper-root-7 MuiPaper-elevation1-10 MuiPaper-rounded-8 MuiCard-root-6 PositionCard-root-1"
+    data-testid="position-good-company"
+    id="position-good-company"
+  >
+    <div
+      class="MuiCardContent-root-34 PositionCard-content-2"
+    >
+      <p
+        class="MuiTypography-root-35 MuiTypography-body1-44 PositionCard-title-5"
+        data-testid="position-good-company-title"
+        id="position-good-company-title"
+      >
+        <span>
+          ROLE
+        </span>
+        <span>
+          2002 - 2012
+        </span>
+      </p>
+      <p
+        class="MuiTypography-root-35 MuiTypography-body1-44 PositionCard-title-5"
+        data-testid="position-good-company-company"
+        id="position-good-company-company"
+      >
+        Good Company
+      </p>
+      <ul
+        class="MuiList-root-71 MuiList-padding-72"
+        data-testid="position-good-company-achievements"
+        id="position-good-company-achievements"
+      >
+        <li
+          class="MuiListItem-root-75 MuiListItem-default-78 MuiListItem-gutters-83 PositionCard-item-4"
+          data-testid="position-good-company-achievement-1"
+          id="position-good-company-achievement-1"
+        >
+          <span
+            class="PositionCard-bullet-3"
+          >
+            •
+          </span>
+          <div
+            class="MuiListItemText-root-87"
+          >
+            <span
+              class="MuiTypography-root-35 MuiTypography-subheading-42 MuiListItemText-primary-90"
+            >
+              Achievement 1
+            </span>
+          </div>
+        </li>
+        <li
+          class="MuiListItem-root-75 MuiListItem-default-78 MuiListItem-gutters-83 PositionCard-item-4"
+          data-testid="position-good-company-achievement-2"
+          id="position-good-company-achievement-2"
+        >
+          <span
+            class="PositionCard-bullet-3"
+          >
+            •
+          </span>
+          <div
+            class="MuiListItemText-root-87"
+          >
+            <span
+              class="MuiTypography-root-35 MuiTypography-subheading-42 MuiListItemText-primary-90"
+            >
+              Achievement 2
+            </span>
+          </div>
+        </li>
+        <li
+          class="MuiListItem-root-75 MuiListItem-default-78 MuiListItem-gutters-83 PositionCard-item-4"
+          data-testid="position-good-company-achievement-3"
+          id="position-good-company-achievement-3"
+        >
+          <span
+            class="PositionCard-bullet-3"
+          >
+            •
+          </span>
+          <div
+            class="MuiListItemText-root-87"
+          >
+            <span
+              class="MuiTypography-root-35 MuiTypography-subheading-42 MuiListItemText-primary-90"
+            >
+              Achievement 3
+            </span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;

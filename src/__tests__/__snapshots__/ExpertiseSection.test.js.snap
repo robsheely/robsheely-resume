@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ExpertiseSection Passes smoke test 1`] = `
+<div>
+  <ul
+    class="MuiGridList-root-3 ExpertiseSection-gridList-1"
+    data-testid="expertiseList"
+    id="expertiseList"
+    style="margin: -2px;"
+  >
+    <p
+      class="MuiTypography-root-4 MuiTypography-body1-13 ExpertiseSection-bullet-2"
+      data-testid="expertiseList-item-1"
+      id="expertiseList-item-1"
+      style="width: 33.333333333333336%; height: 28px; padding: 2px;"
+    >
+      •   
+      Expertise 1
+    </p>
+    <p
+      class="MuiTypography-root-4 MuiTypography-body1-13 ExpertiseSection-bullet-2"
+      data-testid="expertiseList-item-2"
+      id="expertiseList-item-2"
+      style="width: 33.333333333333336%; height: 28px; padding: 2px;"
+    >
+      •   
+      Expertise 2
+    </p>
+    <p
+      class="MuiTypography-root-4 MuiTypography-body1-13 ExpertiseSection-bullet-2"
+      data-testid="expertiseList-item-3"
+      id="expertiseList-item-3"
+      style="width: 33.333333333333336%; height: 28px; padding: 2px;"
+    >
+      •   
+      Expertise 3
+    </p>
+    <p
+      class="MuiTypography-root-4 MuiTypography-body1-13 ExpertiseSection-bullet-2"
+      data-testid="expertiseList-item-4"
+      id="expertiseList-item-4"
+      style="width: 33.333333333333336%; height: 28px; padding: 2px;"
+    >
+      •   
+      Expertise 4
+    </p>
+  </ul>
+</div>
+`;

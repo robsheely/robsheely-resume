@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HeadSection Passes smoke test 1`] = `
+<div>
+  <div
+    class="HeadSection-root-1"
+    data-testid="header-section"
+    id="header-section"
+  >
+    <div
+      class="HeadSection-header-3"
+    >
+      <img
+        alt="Rob Sheely"
+        data-testid="header-section-image"
+        height="100"
+        id="header-section-image"
+        src="profilePicture.jpg"
+        title="Rob Sheely"
+      />
+      <div
+        class="HeadSection-headerTextDiv-6"
+      >
+        <h3
+          class="MuiTypography-root-9 HeadSection-headerText-5 MuiTypography-h3-23 HeadSection-h3-8"
+          data-testid="header-section-name"
+          id="header-section-name"
+        >
+          Name
+        </h3>
+        <p
+          class="MuiTypography-root-9 MuiTypography-body1-18 HeadSection-headerText-5"
+          data-testid="header-section-contact"
+          id="header-section-contact"
+        >
+          Phone | Address | Email
+        </p>
+      </div>
+    </div>
+    <div
+      class="HeadSection-data-2"
+    >
+      <h5
+        class="MuiTypography-root-9 MuiTypography-h5-25 HeadSection-text-4"
+        data-testid="header-section-head"
+        id="header-section-head"
+      >
+        Good Programmer
+      </h5>
+      <h6
+        class="MuiTypography-root-9 MuiTypography-h6-26 HeadSection-text-4"
+        data-testid="header-section-subhead"
+        id="header-section-subhead"
+      >
+        Makes Good Programs
+      </h6>
+      <p
+        class="MuiTypography-root-9 MuiTypography-body2-17 HeadSection-summaryText-7"
+        data-testid="header-section-summary"
+        id="header-section-summary"
+      >
+        A really good programmer who makes good programs.
+      </p>
+    </div>
+  </div>
+</div>
+`;

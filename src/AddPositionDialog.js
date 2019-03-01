@@ -17,7 +17,7 @@ import TextField from "@material-ui/core/TextField";
 import Typography from "@material-ui/core/Typography";
 import { withStyles } from "@material-ui/core/styles";
 
-export const SUBMIT_POSITION = gql`
+export const ADD_POSITION = gql`
   mutation SubmitPosition($input: PositionInput!) {
     addPosition(input: $input) {
       id
@@ -45,7 +45,7 @@ const styles = theme => ({
     minHeight: 100
   },
   dateField: {
-    marginLeft: theme.spacing.unit,
+    marginLeft: 8,
     width: 112
   },
   addButton: {
@@ -76,7 +76,7 @@ const styles = theme => ({
 });
 
 class AddPositionDialog extends React.Component {
-  fields = [
+  requiredFields = [
     "role",
     "start",
     "end",
@@ -96,7 +96,7 @@ class AddPositionDialog extends React.Component {
   validate = () => {
     const errors = {};
     let hasError = false;
-    this.fields.forEach(field => {
+    this.requiredFields.forEach(field => {
       if (!this.state[ field ] || this.state[ field ].length === 0) {
         errors[ field ] = "Required";
         hasError = true;
@@ -106,12 +106,15 @@ class AddPositionDialog extends React.Component {
     return hasError;
   };
 
-  handleFieldChange = ({ target }) => {
+  onFieldChange = ({ target }) => {
+    const field = (target.id.substring(target.id.lastIndexOf("-") + 1));
     this.setState({
-      [ target.id ]: target.value
+      [ field ]: target.value
     });
   };
 
+  // Ensure that only digits are input to the date fields
+  // <input type="number"> has cross-browser issues, plus it allows the chars: e, ., +, and - 
   textMaskCustom = props => {
     const { inputRef, ...other } = props;
 
@@ -127,7 +130,7 @@ class AddPositionDialog extends React.Component {
     );
   };
 
-  addAchievement = achievement => {
+  addAchievement = () => {
     const achievements = this.state.achievements.slice();
     achievements.push(this.state.newAchievement);
     this.setState({
@@ -143,7 +146,8 @@ class AddPositionDialog extends React.Component {
       <TextField
         error={!!this.state.errors[ field ]}
         helperText={this.state.errors[ field ]}
-        id={field}
+        id={`add-position-dialog-input-${field}`}
+        data-testid={`add-position-dialog-input-${field}`}
         label={label}
         className={classes[ className ]}
         value={this.state[ field ]}
@@ -155,7 +159,7 @@ class AddPositionDialog extends React.Component {
         InputProps={{
           inputComponent: mask
         }}
-        onChange={this.handleFieldChange}/>
+        onChange={this.onFieldChange} />
     );
   };
 
@@ -163,7 +167,7 @@ class AddPositionDialog extends React.Component {
     const { classes, open, closeDialog } = this.props;
 
     return (
-      <Mutation mutation={SUBMIT_POSITION}>
+      <Mutation mutation={ADD_POSITION}>
         {addPosition => {
           const submit = async () => {
             if (!this.validate()) {
@@ -180,8 +184,18 @@ class AddPositionDialog extends React.Component {
           };
 
           return (
-            <Dialog open={open} onClose={closeDialog}>
-              <DialogTitle>Add Position</DialogTitle>
+            <Dialog
+              id="add-position-dialog"
+              data-testid="add-position-dialog"
+              open={open}
+              onClose={closeDialog}
+            >
+              <DialogTitle
+                id="add-position-dialog-title"
+                data-testid="add-position-dialog-title"
+              >
+                Add Position
+              </DialogTitle>
               <DialogContent classes={{ root: classes.container }}>
                 <div className={classes.topRow}>
                   {
@@ -210,13 +224,19 @@ class AddPositionDialog extends React.Component {
                   }}
                 >
                   <List
-                    id="achievementsList"
+                    id="add-position-dialog-achievements-list"
+                    data-testid="add-position-dialog-achievements-list"
                     className={classes.achievementsList}
-                    dense={false}>
+                  >
                     {this.state.achievements.map((achievement, id) => (
-                      <ListItem className={classes.item} key={id}>
+                      <ListItem
+                        id={`add-position-dialog-achievements-list-item-${id}`}
+                        data-testid={`add-position-dialog-achievements-list-item-${id}`}
+                        className={classes.item}
+                        key={id}
+                      >
                         <span className={classes.bullet}>•</span>
-                        <ListItemText primary={achievement}/>
+                        <ListItemText primary={achievement} />
                       </ListItem>
                     ))
                     }
@@ -227,22 +247,37 @@ class AddPositionDialog extends React.Component {
                     this.addTextField("newAchievement", "Add Achievement", "textField")
                   }
                   <Button
-                    id="addButton"
-                    disabled={this.state.newAchievement.length === 0} className={classes.addButton}
-                    variant="contained" color="secondary"
-                    onClick={this.addAchievement}>
+                    id="add-position-dialog-add-button"
+                    data-testid="add-position-dialog-add-button"
+                    disabled={this.state.newAchievement.length === 0}
+                    className={classes.addButton}
+                    variant="contained"
+                    color="secondary"
+                    onClick={this.addAchievement}
+                  >
                     Add
                   </Button>
                 </div>
               </DialogContent>
               <DialogActions classes={{ root: classes.actions }}>
-                <Button color="primary" onClick={closeDialog}>
+                <Button
+                  id="add-position-dialog-cancel-button"
+                  data-testid="add-position-dialog-cancel-button"
+                  color="primary"
+                  onClick={closeDialog}
+                >
                   Cancel
                 </Button>
-                <Button variant="contained" color="primary" onClick={submit}>
+                <Button
+                  id="add-position-dialog-submit-button"
+                  data-testid="add-position-dialog-submit-button"
+                  variant="contained"
+                  color="primary"
+                  onClick={submit}
+                >
                   Submit
                 </Button>
-              </DialogActions>;
+              </DialogActions>
             </Dialog>
           );
         }}

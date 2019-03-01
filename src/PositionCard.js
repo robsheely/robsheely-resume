@@ -22,7 +22,7 @@ const styles = theme => ({
   },
   bullet: {
     display: "inline-block",
-    margin: "0 2px",
+    margin: "0 2px"
   },
   item: {
     paddingTop: 0,
@@ -32,28 +32,50 @@ const styles = theme => ({
     fontSize: 16,
     display: "flex",
     justifyContent: "space-between"
-  },
+  }
 });
 
 const PositionCard = props => {
   const { classes, position } = props;
   const { role, start, end, company, achievements } = position;
-  
+  const companyId = company.replace(/\s+/g, "-").toLowerCase();
+
   return (
-    <Card className={classes.root}>
+    <Card
+      id={`position-${companyId}`}
+      data-testid={`position-${companyId}`}
+      className={classes.root}
+    >
       <CardContent classes={{ root: classes.content }}>
-        <Typography className={classes.title}>
+        <Typography
+          id={`position-${companyId}-title`}
+          data-testid={`position-${companyId}-title`}
+          className={classes.title}
+        >
           <span>{role.toUpperCase()}</span>
           <span>{`${start} - ${end}`}</span>
         </Typography>
-        <Typography className={classes.title}>
+        <Typography
+          id={`position-${companyId}-company`}
+          data-testid={`position-${companyId}-company`}
+          className={classes.title}
+        >
           {company}
         </Typography>
-        <List dense={false}>
+        <List
+          id={`position-${companyId}-achievements`}
+          data-testid={`position-${companyId}-achievements`}
+          dense={false}
+        >
           {achievements.map(achievement => (
-            <ListItem className={classes.item} key={achievement.id}>
+            <ListItem
+              id={`position-${companyId}-achievement-${achievement.id}`}
+              data-testid={`position-${companyId}-achievement-${achievement.id}`}
+              className={classes.item}
+              key={achievement.id}
+            >
               <span className={classes.bullet}>•</span>
-              <ListItemText primary={achievement.content} />
+              <ListItemText primary={achievement.content}/>
             </ListItem>
           ))
           }

@@ -1,9 +1,10 @@
 import React from "react";
-import Typography from "@material-ui/core/Typography";
-import { withStyles } from "@material-ui/core";
 import PropTypes from "prop-types";
 
-import photo from "./media/profilePicture.jpg"; // Tell Webpack this JS file uses this image
+import Typography from "@material-ui/core/Typography";
+import { withStyles } from "@material-ui/core";
+
+import photo from "./media/profilePicture.jpg";
 
 const styles = theme => ({
   root: {
@@ -48,12 +49,18 @@ const styles = theme => ({
 });
 
 const HeadSection = props => {
-  const { classes } = props;
+  const { classes, name, contact, head, subhead, summary } = props;
 
   return (
-    <div className={classes.root}>
+    <div
+      id="header-section"
+      data-testid="header-section"
+      className={classes.root}
+    >
       <div className={classes.header}>
         <img
+          id="header-section-image"
+          data-testid="header-section-image"
           className={classes.image}
           src={photo}
           alt="Rob Sheely"
@@ -61,26 +68,46 @@ const HeadSection = props => {
           height="100"
         />
         <div className={classes.headerTextDiv}>
-          <Typography variant="h3" classes={{
-            root: classes.headerText,
-            h3: classes.h3
-          }}>
-            {props.name}
+          <Typography
+            id="header-section-name"
+            data-testid="header-section-name"
+            variant="h3"
+            classes={{
+              root: classes.headerText,
+              h3: classes.h3
+            }}>
+            {name}
           </Typography>
-          <Typography variant="body1" className={classes.headerText}>
-            {props.contact}
+          <Typography
+            id="header-section-contact"
+            data-testid="header-section-contact"
+            variant="body1"
+            className={classes.headerText}>
+            {contact}
           </Typography>
         </div>
       </div>
       <div className={classes.data}>
-        <Typography variant="h5" className={classes.text}>
-          {props.head}
+        <Typography
+          id="header-section-head"
+          data-testid="header-section-head"
+          variant="h5"
+          className={classes.text}>
+          {head}
         </Typography>
-        <Typography variant="h6" className={classes.text}>
-          {props.subhead}
+        <Typography
+          id="header-section-subhead"
+          data-testid="header-section-subhead"
+          variant="h6"
+          className={classes.text}>
+          {subhead}
         </Typography>
-        <Typography variant="body2" className={classes.summaryText}>
-          {props.summary}
+        <Typography
+          id="header-section-summary"
+          data-testid="header-section-summary"
+          variant="body2"
+          className={classes.summaryText}>
+          {summary}
         </Typography>
       </div>
     </div>
@@ -88,7 +115,12 @@ const HeadSection = props => {
 };
 
 HeadSection.propTypes = {
-  classes: PropTypes.object.isRequired
+  classes: PropTypes.object.isRequired,
+  name: PropTypes.string.isRequired,
+  contact: PropTypes.string.isRequired,
+  head: PropTypes.string.isRequired,
+  subhead: PropTypes.string.isRequired,
+  summary: PropTypes.string.isRequired
 };
 
 export default withStyles(styles)(HeadSection);

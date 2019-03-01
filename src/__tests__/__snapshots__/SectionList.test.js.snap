@@ -1,0 +1,92 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SectionList Passes smoke test 1`] = `
+<div>
+  <ul
+    class="MuiList-root-3 MuiList-padding-4"
+    data-testid="sectionList-sectionList"
+    id="sectionList-sectionList"
+  >
+    <li
+      class="MuiListItem-root-7 MuiListItem-default-10 MuiListItem-gutters-15 SectionList-item-2"
+      data-testid="sectionList-sectionList-item-1"
+      id="sectionList-sectionList-item-1"
+    >
+      <span
+        class="SectionList-bullet-1"
+      >
+        •
+      </span>
+      <div
+        class="MuiListItemText-root-19"
+      >
+        <span
+          class="MuiTypography-root-25 MuiTypography-subheading-32 MuiListItemText-primary-22"
+        >
+          Item Number 1
+        </span>
+      </div>
+    </li>
+    <li
+      class="MuiListItem-root-7 MuiListItem-default-10 MuiListItem-gutters-15 SectionList-item-2"
+      data-testid="sectionList-sectionList-item-2"
+      id="sectionList-sectionList-item-2"
+    >
+      <span
+        class="SectionList-bullet-1"
+      >
+        •
+      </span>
+      <div
+        class="MuiListItemText-root-19"
+      >
+        <span
+          class="MuiTypography-root-25 MuiTypography-subheading-32 MuiListItemText-primary-22"
+        >
+          Item Number 2
+        </span>
+      </div>
+    </li>
+    <li
+      class="MuiListItem-root-7 MuiListItem-default-10 MuiListItem-gutters-15 SectionList-item-2"
+      data-testid="sectionList-sectionList-item-3"
+      id="sectionList-sectionList-item-3"
+    >
+      <span
+        class="SectionList-bullet-1"
+      >
+        •
+      </span>
+      <div
+        class="MuiListItemText-root-19"
+      >
+        <span
+          class="MuiTypography-root-25 MuiTypography-subheading-32 MuiListItemText-primary-22"
+        >
+          Item Number 3
+        </span>
+      </div>
+    </li>
+    <li
+      class="MuiListItem-root-7 MuiListItem-default-10 MuiListItem-gutters-15 SectionList-item-2"
+      data-testid="sectionList-sectionList-item-4"
+      id="sectionList-sectionList-item-4"
+    >
+      <span
+        class="SectionList-bullet-1"
+      >
+        •
+      </span>
+      <div
+        class="MuiListItemText-root-19"
+      >
+        <span
+          class="MuiTypography-root-25 MuiTypography-subheading-32 MuiListItemText-primary-22"
+        >
+          Item Number 4
+        </span>
+      </div>
+    </li>
+  </ul>
+</div>
+`;

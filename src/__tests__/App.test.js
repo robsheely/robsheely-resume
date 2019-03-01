@@ -1,0 +1,17 @@
+import React from "react";
+import ReactDOM from "react-dom";
+import { MockedProvider } from "react-apollo/test-utils";
+
+import App from "../App";
+
+describe("App", () => {
+  it("renders without crashing", () => {
+    const div = document.createElement("div");
+    ReactDOM.render(
+      <MockedProvider>
+        <App/>
+      </MockedProvider>,
+      div);
+    ReactDOM.unmountComponentAtNode(div);
+  });
+});

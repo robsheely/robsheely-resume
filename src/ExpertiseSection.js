@@ -9,7 +9,7 @@ const styles = theme => ({
   gridList: {
     paddingTop: 10,
     paddingLeft: 20,
-    paddingRight: 20,
+    paddingRight: 20
   },
   bullet: {
     textAlign: "left",
@@ -21,9 +21,20 @@ const ExpertiseSection = props => {
   const { classes, content } = props;
 
   return (
-    <GridList cellHeight={24} className={classes.gridList} cols={3}>
+    <GridList
+      id="expertiseList"
+      data-testid="expertiseList"
+      className={classes.gridList}
+      cellHeight={24}
+      cols={3}
+    >
       {content.map(element => (
-        <Typography className={classes.bullet} key={element.id}>•&nbsp;&nbsp;&nbsp;{element.content}</Typography>
+        <Typography 
+          id={`expertiseList-item-${element.id}`}
+          data-testid={`expertiseList-item-${element.id}`}
+          className={classes.bullet} 
+          key={element.id}>•&nbsp;&nbsp;&nbsp;{element.content}
+        </Typography>
       ))}
     </GridList>
   );
