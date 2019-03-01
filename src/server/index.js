@@ -140,7 +140,7 @@ const schema = buildASTSchema(gql`
   }
 
   type Mutation {
-    submitPosition(input: PositionInput!): Position
+    addPosition(input: PositionInput!): Position
   }
 
   input PositionInput {
@@ -183,9 +183,10 @@ const root = {
     education: () => DATA.education.map(mapIdString),
     community: () => DATA.community.map(mapIdString)
   },
-  addPosition: ({ positionInput }) => {
-    const position = mapPosition(positionInput);
-    DATA.positions.push(position);
+  addPosition: ({ input }) => {
+    const position = mapPosition(input);
+    DATA.positions.push(input);
+    console.log(DATA.positions)
     return position;
   }
 };

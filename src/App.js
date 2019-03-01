@@ -1,30 +1,27 @@
-import React, { Component } from 'react';
-import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import red from '@material-ui/core/colors/red';
-import yellow from '@material-ui/core/colors/yellow';
+import React from "react";
+import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
+import CssBaseline from "@material-ui/core/CssBaseline";
+import common from "@material-ui/core/colors/grey";
+import indigo from "@material-ui/core/colors/indigo";
 
-import Resume from './Resume';
-//import Content from './Content';
+import Resume from "./Resume";
 
 const theme = createMuiTheme({
   typography: {
-    useNextVariants: true,
+    useNextVariants: true
   },
   palette: {
-    primary: yellow,
-    secondary: red // Indigo is probably a good match with pink
+    primary: indigo,
+    secondary: common
   }
 });
-class App extends Component {
-  render() {
-    return (
-      <MuiThemeProvider theme={theme}>
-        <CssBaseline />
-        <Resume/>
-      </MuiThemeProvider>
-    );
-  }
-}
+const App = props => {
+  return (
+    <MuiThemeProvider theme={theme}>
+      <CssBaseline/>
+      <Resume/>
+    </MuiThemeProvider>
+  );
+};
 
 export default App;

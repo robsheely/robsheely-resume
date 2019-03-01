@@ -7,7 +7,8 @@ import ListItemText from "@material-ui/core/ListItemText";
 const styles = theme => ({
   bullet: {
     display: "inline-block",
-    margin: "0 2px"
+    margin: "0 2px",
+    transform: "scale(0.85)"
   },
   item: {
     paddingTop: 0,
@@ -19,7 +20,7 @@ const SectionList = props => {
   const { classes, items } = props;
 
   return (
-    <List dense={false}>
+    <List id="sectionList">
       {items.map(item => (
         <ListItem className={classes.item} key={item.id}>
           <span className={classes.bullet}>•</span>

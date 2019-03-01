@@ -2,13 +2,16 @@ import React from "react";
 import PropTypes from "prop-types";
 import gql from "graphql-tag";
 import { Query } from "react-apollo";
+
+import Button from "@material-ui/core/Button";
 import { withStyles } from "@material-ui/core/styles";
 
 import Section from "./Section";
-import Head from "./Head";
+import Head from "./HeadSection";
 import PositionCard from "./PositionCard";
-import Expertise from "./Expertise";
-import SectionList from "./SectionList"
+import Expertise from "./ExpertiseSection";
+import SectionList from "./SectionList";
+import AddPositionDialog from "./AddPositionDialog";
 
 export const GET_RESUME = gql`
   query getResume {
@@ -52,17 +55,34 @@ export const GET_RESUME = gql`
 const styles = theme => ({
   root: {
     textAlign: "center",
-    paddingTop: theme.spacing.unit * 20
+    alignContent: "center",
+    padding: theme.spacing.unit * 4,
+    minWidth: 940,
+    maxWidth: 1200
+  },
+  button: {
+    marginTop: 10
   }
 });
 
 class Resume extends React.Component {
+  state = {
+    dialogOpen: false
+  };
+
+  openDialog = () => {
+    this.setState({
+      dialogOpen: true
+    });
+  };
+
   render() {
     const { classes } = this.props;
+    const { dialogOpen } = this.state;
 
     return (
       <Query query={GET_RESUME}>
-        {({ loading, errors, data }) => {
+        {({ loading, errors, data, refetch }) => {
           if (!loading) {
             const { resume } = data;
 
@@ -73,8 +93,16 @@ class Resume extends React.Component {
               return -1;
             });
 
+            const closeDialog = () => {
+              this.setState({
+                dialogOpen: false
+              });
+              refetch();
+            };
+
             return (
               <div className={classes.root}>
+                <AddPositionDialog open={dialogOpen} closeDialog={closeDialog}/>
                 <div align="center">
                   <Section>
                     <Head {...resume} />
@@ -89,6 +117,9 @@ class Resume extends React.Component {
                     {positions.map(position => (
                       <PositionCard key={position.id} position={position}/>
                     ))}
+                    <Button variant="contained" color="primary" className={classes.button} onClick={this.openDialog}>
+                      Add Position
+                    </Button>
                   </Section>
                   <Section label="Education & Training">
                     <SectionList items={resume.education}/>
@@ -105,6 +136,7 @@ class Resume extends React.Component {
       </Query>
     );
   }
+
 }
 
 Resume.propTypes = {

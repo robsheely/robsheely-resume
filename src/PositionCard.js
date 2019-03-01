@@ -1,18 +1,21 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { withStyles } from "@material-ui/core/styles";
+
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
-import Typography from "@material-ui/core/Typography";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
+import Typography from "@material-ui/core/Typography";
+import { withStyles } from "@material-ui/core/styles";
 
 const styles = theme => ({
-  card: {
+  root: {
     width: "100%",
     marginTop: 6,
-    marginBottom: 6
+    marginBottom: 6,
+    paddingLeft: 20,
+    paddingRight: 20
   },
   content: {
     textAlign: "left"
@@ -23,10 +26,10 @@ const styles = theme => ({
   },
   item: {
     paddingTop: 0,
-    paddingBottom: 0
+    paddingBottom: 8
   },
   title: {
-    fontSize: 14,
+    fontSize: 16,
     display: "flex",
     justifyContent: "space-between"
   },
@@ -37,13 +40,13 @@ const PositionCard = props => {
   const { role, start, end, company, achievements } = position;
   
   return (
-    <Card className={classes.card}>
+    <Card className={classes.root}>
       <CardContent classes={{ root: classes.content }}>
-        <Typography className={classes.title} color="textSecondary" gutterBottom>
-          <span>{role}</span>
+        <Typography className={classes.title}>
+          <span>{role.toUpperCase()}</span>
           <span>{`${start} - ${end}`}</span>
         </Typography>
-        <Typography className={classes.title} color="textSecondary" gutterBottom>
+        <Typography className={classes.title}>
           {company}
         </Typography>
         <List dense={false}>
