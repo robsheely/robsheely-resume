@@ -1,6 +1,6 @@
 import React from "react";
 import { ApolloProvider } from "react-apollo";
-import { render, cleanup } from "react-testing-library";
+import { render, cleanup, fireEvent } from "react-testing-library";
 import setupClient from "apollo-client-mock";
 
 import Resume from "../Resume";
@@ -38,6 +38,19 @@ describe("Resume", () => {
   it("Renders loading", () => {
     const { queryByText } = renderComponent();
     expect(queryByText("loading...")).not.toBeNull();
+  });
+
+  it("Add Position button opens dialog", async () => {
+    const { getByTestId, queryByTestId } = renderComponent();
+    await sleep();
+    const addButton = getByTestId("resume-add-button");
+    
+    expect(queryByTestId("add-position-dialog")).toBeNull();
+    fireEvent.click(addButton);
+    expect(queryByTestId("add-position-dialog")).not.toBeNull();
+    const cancelButton = getByTestId("add-position-dialog-cancel-button");
+    fireEvent.click(cancelButton);
+    expect(queryByTestId("add-position-dialog")).toBeNull();
   });
 
   it("Renders elements", async () => {
