@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1553228809364" clover="3.2.0">
+  <project timestamp="1553228809364" name="All files">
+    <metrics statements="129" coveredstatements="84" conditionals="20" coveredconditionals="15" methods="47" coveredmethods="34" elements="196" coveredelements="133" complexity="0" loc="129" ncloc="129" packages="2" files="11" classes="11">
+      <package name="src">
+        <metrics statements="92" coveredstatements="82" conditionals="18" coveredconditionals="15" methods="34" coveredmethods="34"/>
+        <file name="AddPositionDialog.js" path="/Users/rob/git/robsheely-resume/src/AddPositionDialog.js">
+          <metrics statements="32" coveredstatements="30" conditionals="8" coveredconditionals="6" methods="13" coveredmethods="13"/>
+          <line num="20" count="3" type="stmt"/>
+          <line num="28" count="9" type="stmt"/>
+          <line num="97" count="1" type="stmt"/>
+          <line num="109" count="1" type="stmt"/>
+          <line num="110" count="1" type="stmt"/>
+          <line num="111" count="1" type="stmt"/>
+          <line num="112" count="4" type="cond" truecount="3" falsecount="1"/>
+          <line num="113" count="0" type="stmt"/>
+          <line num="114" count="0" type="stmt"/>
+          <line num="117" count="1" type="stmt"/>
+          <line num="118" count="1" type="stmt"/>
+          <line num="122" count="8" type="stmt"/>
+          <line num="123" count="8" type="stmt"/>
+          <line num="131" count="55" type="stmt"/>
+          <line num="133" count="55" type="stmt"/>
+          <line num="137" count="110" type="cond" truecount="2" falsecount="0"/>
+          <line num="146" count="3" type="stmt"/>
+          <line num="147" count="3" type="stmt"/>
+          <line num="148" count="3" type="stmt"/>
+          <line num="155" count="125" type="stmt"/>
+          <line num="157" count="125" type="stmt"/>
+          <line num="179" count="24" type="stmt"/>
+          <line num="181" count="24" type="stmt"/>
+          <line num="184" count="25" type="stmt"/>
+          <line num="185" count="1" type="cond" truecount="1" falsecount="1"/>
+          <line num="186" count="1" type="stmt"/>
+          <line num="193" count="1" type="stmt"/>
+          <line num="194" count="1" type="stmt"/>
+          <line num="195" count="1" type="stmt"/>
+          <line num="199" count="25" type="stmt"/>
+          <line num="246" count="15" type="stmt"/>
+          <line num="303" count="3" type="stmt"/>
+        </file>
+        <file name="App.js" path="/Users/rob/git/robsheely-resume/src/App.js">
+          <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+          <line num="10" count="1" type="stmt"/>
+          <line num="19" count="1" type="stmt"/>
+          <line num="20" count="1" type="stmt"/>
+        </file>
+        <file name="ExpertiseSection.js" path="/Users/rob/git/robsheely-resume/src/ExpertiseSection.js">
+          <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+          <line num="8" count="7" type="stmt"/>
+          <line num="20" count="3" type="stmt"/>
+          <line num="21" count="8" type="stmt"/>
+          <line num="23" count="8" type="stmt"/>
+          <line num="32" count="80" type="stmt"/>
+          <line num="43" count="3" type="stmt"/>
+        </file>
+        <file name="HeadSection.js" path="/Users/rob/git/robsheely-resume/src/HeadSection.js">
+          <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+          <line num="9" count="7" type="stmt"/>
+          <line num="51" count="3" type="stmt"/>
+          <line num="52" count="8" type="stmt"/>
+          <line num="54" count="8" type="stmt"/>
+          <line num="117" count="3" type="stmt"/>
+        </file>
+        <file name="PositionCard.js" path="/Users/rob/git/robsheely-resume/src/PositionCard.js">
+          <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+          <line num="12" count="7" type="stmt"/>
+          <line num="38" count="3" type="stmt"/>
+          <line num="39" count="32" type="stmt"/>
+          <line num="40" count="32" type="stmt"/>
+          <line num="41" count="32" type="stmt"/>
+          <line num="43" count="32" type="stmt"/>
+          <line num="71" count="90" type="stmt"/>
+          <line num="88" count="3" type="stmt"/>
+        </file>
+        <file name="Resume.js" path="/Users/rob/git/robsheely-resume/src/Resume.js">
+          <metrics statements="19" coveredstatements="18" conditionals="6" coveredconditionals="5" methods="7" coveredmethods="7"/>
+          <line num="16" count="2" type="stmt"/>
+          <line num="55" count="5" type="stmt"/>
+          <line num="74" count="1" type="stmt"/>
+          <line num="80" count="7" type="stmt"/>
+          <line num="81" count="7" type="stmt"/>
+          <line num="83" count="7" type="stmt"/>
+          <line num="86" count="16" type="cond" truecount="2" falsecount="0"/>
+          <line num="87" count="10" type="stmt"/>
+          <line num="90" count="6" type="cond" truecount="1" falsecount="1"/>
+          <line num="91" count="0" type="stmt"/>
+          <line num="94" count="6" type="stmt"/>
+          <line num="97" count="6" type="stmt"/>
+          <line num="98" count="44" type="cond" truecount="2" falsecount="0"/>
+          <line num="101" count="6" type="stmt"/>
+          <line num="102" count="1" type="stmt"/>
+          <line num="107" count="1" type="stmt"/>
+          <line num="110" count="6" type="stmt"/>
+          <line num="146" count="30" type="stmt"/>
+          <line num="180" count="2" type="stmt"/>
+        </file>
+        <file name="Section.js" path="/Users/rob/git/robsheely-resume/src/Section.js">
+          <metrics statements="6" coveredstatements="6" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2"/>
+          <line num="10" count="8" type="stmt"/>
+          <line num="32" count="3" type="stmt"/>
+          <line num="33" count="39" type="stmt"/>
+          <line num="35" count="39" type="cond" truecount="2" falsecount="0"/>
+          <line num="37" count="39" type="stmt"/>
+          <line num="73" count="3" type="stmt"/>
+        </file>
+        <file name="SectionList.js" path="/Users/rob/git/robsheely-resume/src/SectionList.js">
+          <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+          <line num="9" count="7" type="stmt"/>
+          <line num="21" count="3" type="stmt"/>
+          <line num="22" count="20" type="stmt"/>
+          <line num="24" count="20" type="stmt"/>
+          <line num="27" count="104" type="stmt"/>
+          <line num="42" count="3" type="stmt"/>
+        </file>
+        <file name="index.js" path="/Users/rob/git/robsheely-resume/src/index.js">
+          <metrics statements="7" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+          <line num="1" count="0" type="stmt"/>
+          <line num="2" count="0" type="stmt"/>
+          <line num="3" count="0" type="stmt"/>
+          <line num="4" count="0" type="stmt"/>
+          <line num="6" count="0" type="stmt"/>
+          <line num="8" count="0" type="stmt"/>
+          <line num="12" count="0" type="stmt"/>
+        </file>
+      </package>
+      <package name="src.server">
+        <metrics statements="37" coveredstatements="2" conditionals="2" coveredconditionals="0" methods="13" coveredmethods="0"/>
+        <file name="index.js" path="/Users/rob/git/robsheely-resume/src/server/index.js">
+          <metrics statements="35" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="13" coveredmethods="0"/>
+          <line num="1" count="0" type="stmt"/>
+          <line num="2" count="0" type="stmt"/>
+          <line num="3" count="0" type="stmt"/>
+          <line num="4" count="0" type="stmt"/>
+          <line num="6" count="0" type="stmt"/>
+          <line num="8" count="0" type="stmt"/>
+          <line num="9" count="0" type="stmt"/>
+          <line num="11" count="0" type="stmt"/>
+          <line num="13" count="0" type="stmt"/>
+          <line num="14" count="0" type="stmt"/>
+          <line num="18" count="0" type="stmt"/>
+          <line num="21" count="0" type="stmt"/>
+          <line num="22" count="0" type="stmt"/>
+          <line num="23" count="0" type="stmt"/>
+          <line num="28" count="0" type="stmt"/>
+          <line num="31" count="0" type="stmt"/>
+          <line num="33" count="0" type="stmt"/>
+          <line num="34" count="0" type="stmt"/>
+          <line num="35" count="0" type="stmt"/>
+          <line num="36" count="0" type="stmt"/>
+          <line num="37" count="0" type="stmt"/>
+          <line num="38" count="0" type="stmt"/>
+          <line num="39" count="0" type="stmt"/>
+          <line num="40" count="0" type="stmt"/>
+          <line num="41" count="0" type="stmt"/>
+          <line num="42" count="0" type="stmt"/>
+          <line num="45" count="0" type="stmt"/>
+          <line num="46" count="0" type="stmt"/>
+          <line num="47" count="0" type="stmt"/>
+          <line num="51" count="0" type="stmt"/>
+          <line num="52" count="0" type="stmt"/>
+          <line num="53" count="0" type="stmt"/>
+          <line num="59" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="60" count="0" type="stmt"/>
+          <line num="61" count="0" type="stmt"/>
+        </file>
+        <file name="schema.js" path="/Users/rob/git/robsheely-resume/src/server/schema.js">
+          <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+          <line num="1" count="2" type="stmt"/>
+          <line num="47" count="2" type="stmt"/>
+        </file>
+      </package>
+    </metrics>
+  </project>
+</coverage>

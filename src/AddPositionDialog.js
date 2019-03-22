@@ -92,6 +92,18 @@ class AddPositionDialog extends React.Component {
     newAchievement: "",
     errors: {}
   };
+  
+  reset() {
+    this.setState({
+      role: "",
+      start: "",
+      end: "",
+      company: "",
+      achievements: [],
+      newAchievement: "",
+      errors: {}
+    });
+  }
 
   validate = () => {
     const errors = {};
@@ -103,7 +115,7 @@ class AddPositionDialog extends React.Component {
       }
     });
     this.setState({ errors });
-    return hasError;
+    return !hasError;
   };
 
   onFieldChange = ({ target }) => {
@@ -170,7 +182,7 @@ class AddPositionDialog extends React.Component {
       <Mutation mutation={ADD_POSITION}>
         {addPosition => {
           const submit = async () => {
-            if (!this.validate()) {
+            if (this.validate()) {
               const input = {
                 role: this.state.role,
                 start: parseInt(this.state.start),
@@ -180,6 +192,7 @@ class AddPositionDialog extends React.Component {
               };
               await addPosition({ variables: { input } });
               closeDialog();
+              this.reset();
             }
           };
 
@@ -189,6 +202,7 @@ class AddPositionDialog extends React.Component {
               data-testid="add-position-dialog"
               open={open}
               onClose={closeDialog}
+              onExit={this.onExited}
             >
               <DialogTitle
                 id="add-position-dialog-title"
