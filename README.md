@@ -16,3 +16,5 @@ The client consumes and displays the data from the node/express/graphQL api. It 
 To run:
 - Clone this project
 - In the cloned project directory enter: ```yarn start```
+
+NOTE: A PDF version of my resume is included at root level.
